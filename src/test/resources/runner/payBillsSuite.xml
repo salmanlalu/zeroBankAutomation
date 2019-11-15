@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DDF with Zero Bank">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener
+			class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="listener.CustomListeners" />
+	</listeners>
+
+	<test name="Pay Bills Tab page Verify Test">
+		<classes>
+			<class
+				name="com.webAppSecurities.zeroBank.payBills.PayBillsVerifyPage" />
+		</classes>
+	</test>
+	<test name="Payee Saved Functionality Test">
+		<classes>
+			<class
+				name="com.webAppSecurities.zeroBank.payBills.PaySavedPayeeFunctionTest" />
+		</classes>
+	</test>
+	<test name="Add payee page Verify test">
+		<classes>
+			<class
+				name="com.webAppSecurities.zeroBank.payBills.AddNewPayeeVerifyPage" />
+		</classes>
+	</test>
+	<test name="Add payee functionality test">
+		<classes>
+			<class
+				name="com.webAppSecurities.zeroBank.payBills.AddNewPayeeFunctionTest" />
+		</classes>
+	</test>
+	<test name="Purchase Foreign Excahnge page verify test">
+		<classes>
+			<class
+				name="com.webAppSecurities.zeroBank.payBills.PurchaseFCVerifyPage" />
+		</classes>
+	</test>
+	<test name="Purchase Foreign Excahnge page Function test">
+		<classes>
+			<class
+				name="com.webAppSecurities.zeroBank.payBills.PurchaseFCFunctionTest" />
+		</classes>
+	</test>
+
+</suite> <!-- Suite -->

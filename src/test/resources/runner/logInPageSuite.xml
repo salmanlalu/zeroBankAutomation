@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DDF with Zero Bank">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener
+			class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="listener.CustomListeners" />
+	</listeners>
+
+	<test name="Login Test with valid Username and Password">
+		<classes>
+			<class name="com.webAppSecurities.zeroBank.loginPage.LoginWithValidUserPwd" />
+		</classes>
+	</test>
+	<test name="Login Test with valid Username and invalid Password">
+		<classes>
+			<class name="com.webAppSecurities.zeroBank.loginPage.LoginWithValidUser" />
+		</classes>
+	</test>
+	<test name="Login Test with invalid Username and valid Password">
+		<classes>
+			<class name="com.webAppSecurities.zeroBank.loginPage.LoginWithValidPwd" />
+		</classes>
+	</test>
+		<test name="Login Test for forget password function">
+		<classes>
+			<class name="com.webAppSecurities.zeroBank.loginPage.ForgetPwd" />
+		</classes>
+	</test>
+
+</suite> <!-- Suite -->

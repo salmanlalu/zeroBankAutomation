@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Test with DDF for Zero Bank">
+
+
+
+	<suite-files>
+		<suite-file path="logInPageSuite.xml"></suite-file>
+		<suite-file path="accountsummarysuite.xml"></suite-file>
+		<suite-file path="transferFundSuite.xml"></suite-file>
+		<suite-file path="payBillsSuite.xml"></suite-file>
+		
+		
+
+	</suite-files>
+
+</suite> <!-- Suite -->

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DDF with Zero Bank">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener
+			class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="listener.CustomListeners" />
+	</listeners>
+
+	<test name="Transfer Fund Page Verify Test">
+		<classes>
+			<class
+				name="com.webAppSecurities.zeroBank.transferfund.TransferFundVerifyPage" />
+		</classes>
+	</test>
+	<test name="Transfer Fund Functionality Test">
+		<classes>
+			<class
+				name="com.webAppSecurities.zeroBank.transferfund.TransferFundVerifyPageOptions" />
+		</classes>
+	</test>
+	<test name="Tranfer Fund Cancel Button Functionality Check">
+		<classes>
+			<class
+				name="com.webAppSecurities.zeroBank.transferfund.TransferFundVerifyCancel" />
+		</classes>
+	</test>
+	<test name="Transfer Fund Transaction Again Functionality Check">
+		<classes>
+			<class
+				name="com.webAppSecurities.zeroBank.transferfund.TransferFundAnotherTransactionVerify" />
+		</classes>
+	</test>
+
+
+</suite> <!-- Suite -->

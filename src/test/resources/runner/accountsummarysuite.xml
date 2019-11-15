@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DDF with Zero Bank">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener
+			class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="listener.CustomListeners" />
+	</listeners>
+
+	<test name="Saving Account Button Verify">
+		<classes>
+			<class
+				name="com.webAppSecurities.zeroBank.accountSummary.CashAccountsVerify" />
+		</classes>
+	</test>
+	<test name="Investment Account Button Verify">
+		<classes>
+			<class
+				name="com.webAppSecurities.zeroBank.accountSummary.InvestmentAccountsVerify" />
+		</classes>
+	</test>
+	<test name="CreditChk Account Button Verify">
+		<classes>
+			<class
+				name="com.webAppSecurities.zeroBank.accountSummary.CreditChkAccountsVerify" />
+		</classes>
+	</test>
+	<test name="Credit Card Account Button Verify">
+		<classes>
+			<class
+				name="com.webAppSecurities.zeroBank.accountSummary.CreditCardAccountsVerify" />
+		</classes>
+	</test>
+	<test name="Loan Account Button Verify">
+		<classes>
+			<class
+				name="com.webAppSecurities.zeroBank.accountSummary.LoanAccountsVerify" />
+		</classes>
+	</test>
+
+</suite> <!-- Suite -->
