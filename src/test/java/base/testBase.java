@@ -147,46 +147,61 @@ public class testBase {
 	// Custom method for clicking on an web element
 	public static void click(String locator) {
 
-		if (locator.endsWith("_XPATH")) {
+		try {
 
-			driver.findElement(By.xpath(OR.getProperty(locator))).click();
+			if (locator.endsWith("_XPATH")) {
 
-		} else if (locator.endsWith("_CSS")) {
+				driver.findElement(By.xpath(OR.getProperty(locator))).click();
 
-			driver.findElement(By.cssSelector(OR.getProperty(locator))).click();
+			} else if (locator.endsWith("_CSS")) {
 
-		} else if (locator.endsWith("_ID")) {
+				driver.findElement(By.cssSelector(OR.getProperty(locator))).click();
 
-			driver.findElement(By.id(OR.getProperty(locator))).click();
+			} else if (locator.endsWith("_ID")) {
 
-		} else if (locator.endsWith("_NAME")) {
+				driver.findElement(By.id(OR.getProperty(locator))).click();
 
-			driver.findElement(By.name(OR.getProperty(locator))).click();
+			} else if (locator.endsWith("_NAME")) {
+
+				driver.findElement(By.name(OR.getProperty(locator))).click();
+			}
+
+			test.log(LogStatus.INFO, "clicking on the button: " + locator);
+			log.info("clicking on the button: " + locator);
+
+		} catch (NoSuchElementException e) {
+
+			e.printStackTrace();
+			log.info(e);
 		}
-
-		test.log(LogStatus.INFO, "clicking on the button: " + locator);
-		log.info("clicking on the button: " + locator);
 	}
 
 	// Custom method for inputting string into the text box
 	public static void type(String locator, String value) {
 
-		if (locator.endsWith("_XPATH")) {
+		try {
+			if (locator.endsWith("_XPATH")) {
 
-			driver.findElement(By.xpath(OR.getProperty(locator))).sendKeys(value);
-		} else if (locator.endsWith("_CSS")) {
+				driver.findElement(By.xpath(OR.getProperty(locator))).sendKeys(value);
+			} else if (locator.endsWith("_CSS")) {
 
-			driver.findElement(By.cssSelector(OR.getProperty(locator))).sendKeys(value);
-		} else if (locator.endsWith("_ID")) {
+				driver.findElement(By.cssSelector(OR.getProperty(locator))).sendKeys(value);
+			} else if (locator.endsWith("_ID")) {
 
-			driver.findElement(By.id(OR.getProperty(locator))).sendKeys(value);
-		} else if (locator.endsWith("_NAME")) {
+				driver.findElement(By.id(OR.getProperty(locator))).sendKeys(value);
+			} else if (locator.endsWith("_NAME")) {
 
-			driver.findElement(By.name(OR.getProperty(locator))).sendKeys(value);
+				driver.findElement(By.name(OR.getProperty(locator))).sendKeys(value);
+			}
+
+			test.log(LogStatus.INFO, "Input into the TextBox: " + locator + " and entering the value of: " + value);
+			log.info("Input into the TextBox: " + locator + " and entering the value of: " + value);
+			
+		} catch (NoSuchElementException e) {
+			
+			e.printStackTrace();
+			log.info(e);
 		}
-
-		test.log(LogStatus.INFO, "Input into the TextBox: " + locator + " and entering the value of: " + value);
-		log.info("Input into the TextBox: " + locator + " and entering the value of: " + value);
 	}
 
 	static WebElement dropdown;
@@ -194,6 +209,8 @@ public class testBase {
 	// Custom method for selecting options from the drop down menu
 	public static void select(String locator, String value) {
 
+		try {
+		
 		if (locator.endsWith("_XPATH")) {
 			dropdown = driver.findElement(By.xpath(OR.getProperty(locator)));
 		} else if (locator.endsWith("_CSS")) {
@@ -209,23 +226,35 @@ public class testBase {
 
 		test.log(LogStatus.INFO, "Selecting the option of: " + value + " from the dropdown element: " + locator);
 		log.info("Selecting the option of: " + value + " from the dropdown element: " + locator);
+		
+	}catch (NoSuchElementException e) {
+		
+		e.printStackTrace();
+		log.info(e);
+	} 
 	}
-
 	// Custom method for selecting options from the drop down menu with value
 	public static void select_radio(String locator) {
 
-		if (locator.endsWith("_XPATH")) {
-			driver.findElement(By.xpath(OR.getProperty(locator))).click();
-		} else if (locator.endsWith("_CSS")) {
-			driver.findElement(By.cssSelector(OR.getProperty(locator))).click();
-		} else if (locator.endsWith("_ID")) {
-			driver.findElement(By.id(OR.getProperty(locator))).click();
-		} else if (locator.endsWith("_NAME")) {
-			driver.findElement(By.name(OR.getProperty(locator))).click();
-		}
+		try {
+			if (locator.endsWith("_XPATH")) {
+				driver.findElement(By.xpath(OR.getProperty(locator))).click();
+			} else if (locator.endsWith("_CSS")) {
+				driver.findElement(By.cssSelector(OR.getProperty(locator))).click();
+			} else if (locator.endsWith("_ID")) {
+				driver.findElement(By.id(OR.getProperty(locator))).click();
+			} else if (locator.endsWith("_NAME")) {
+				driver.findElement(By.name(OR.getProperty(locator))).click();
+			}
 
-		test.log(LogStatus.INFO, "Selecting the radio button : " + locator);
-		log.info("Selecting the radio button : " + locator);
+			test.log(LogStatus.INFO, "Selecting the radio button : " + locator);
+			log.info("Selecting the radio button : " + locator);
+			
+		} catch (NoSuchElementException e) {
+			
+			e.printStackTrace();
+			log.info(e);
+		}
 	}
 
 	public static String getTitle() {
@@ -237,18 +266,26 @@ public class testBase {
 	public static String getTextFromMessage(String locator) {
 
 		String s = null;
-		if (locator.endsWith("_XPATH")) {
+		
+		try {
+			if (locator.endsWith("_XPATH")) {
 
-			s = driver.findElement(By.xpath(OR.getProperty(locator))).getText();
-		} else if (locator.endsWith("_CSS")) {
+				s = driver.findElement(By.xpath(OR.getProperty(locator))).getText();
+			} else if (locator.endsWith("_CSS")) {
 
-			s = driver.findElement(By.cssSelector(OR.getProperty(locator))).getText();
-		} else if (locator.endsWith("_ID")) {
+				s = driver.findElement(By.cssSelector(OR.getProperty(locator))).getText();
+			} else if (locator.endsWith("_ID")) {
 
-			s = driver.findElement(By.id(OR.getProperty(locator))).getText();
-		} else if (locator.endsWith("_NAME")) {
+				s = driver.findElement(By.id(OR.getProperty(locator))).getText();
+			} else if (locator.endsWith("_NAME")) {
 
-			s = driver.findElement(By.name(OR.getProperty(locator))).getText();
+				s = driver.findElement(By.name(OR.getProperty(locator))).getText();
+			}
+			
+		} catch (NoSuchElementException e) {
+			
+			e.printStackTrace();
+			log.info(e);
 		}
 
 		return s;
